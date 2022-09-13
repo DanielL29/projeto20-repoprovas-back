@@ -66,6 +66,7 @@ model TeacherDiscipline {
   createdAt    DateTime   @default(now()) @db.Timestamp(6)
   Test         Test[]
 
+  @@unique([teacherId, disciplineId])
   @@map("teachersDisciplines")
 }
 

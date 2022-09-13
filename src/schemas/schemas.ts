@@ -1,4 +1,5 @@
 import { ObjectSchema } from "joi"
+import testSchema from "./testSchema.js"
 import userSchema from "./userSchema.js"
 
 export interface Schemas {
@@ -6,7 +7,8 @@ export interface Schemas {
 }
 
 const schemas: Schemas = {
-    user: userSchema
+    user: userSchema,
+    test: testSchema
 }
 
 export default schemas
