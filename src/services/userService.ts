@@ -11,6 +11,8 @@ export async function signUp(user: UserInsertData) {
     verifyData.conflictDataExists(isUser, 'email')
     const password: string = hash.hashSync(user.password)
 
+    delete user.confirmPassword
+
     await userRepository.insert({ ...user, password })
 }
 

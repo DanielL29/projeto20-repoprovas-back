@@ -9,3 +9,15 @@ export async function create(req: Request, res: Response) {
 
     res.sendStatus(201)
 }
+
+export async function getByDiscipline(req: Request, res: Response) {
+    const testByDiscipline = await testService.allTestsByDiscipline()
+
+    res.status(200).send(testByDiscipline)
+}
+
+export async function getByTeacher(req: Request, res: Response) {
+    const testByTeacher = await testService.allTestsByTeacher()
+
+    res.status(200).send(testByTeacher)
+}
