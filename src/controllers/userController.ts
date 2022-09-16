@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import * as authService from '../services/userService.js'
-import { UserInsertData } from "../types/userType.js";
+import * as authService from '../services/userService'
+import { UserInsertData } from "../types/userType";
 
 export async function create(req: Request, res: Response) {
     const user: UserInsertData = req.body

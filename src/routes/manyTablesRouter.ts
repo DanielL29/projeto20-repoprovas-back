@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import validateToken from '../middlewares/validateToken.js'
-import * as manyTablesController from '../controllers/manyTablesController.js'
+import validateToken from '../middlewares/validateToken'
+import * as manyTablesController from '../controllers/manyTablesController'
 
 const manyTablesRouter = Router()
 

@@ -1,5 +1,5 @@
-import * as errors from '../errors/errorsThrow.js'
-import { allModels } from '../types/userType.js'
+import * as errors from '../errors/errorsThrow'
+import { allModels } from '../types/userType'
 
 export interface VerifyDataLiterals {
     foundData: (data: allModels | null, modelSingular: string, modelPlural: string) => void

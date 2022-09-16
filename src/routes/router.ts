@@ -1,7 +1,7 @@
 import { Router } from 'express'
-import manyTablesRouter from './manyTablesRouter.js'
-import testRouter from './testRouter.js'
-import userRouter from './userRouter.js'
+import manyTablesRouter from './manyTablesRouter'
+import testRouter from './testRouter'
+import userRouter from './userRouter'
 
 const router = Router()
 

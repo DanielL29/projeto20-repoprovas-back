@@ -1,6 +1,6 @@
 import { ObjectSchema } from "joi"
-import testSchema from "./testSchema.js"
-import userSchema from "./userSchema.js"
+import testSchema from "./testSchema"
+import userSchema from "./userSchema"
 
 export interface Schemas {
     [key: string]: ObjectSchema

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import * as errors from '../errors/errorsThrow.js'
+import * as errors from '../errors/errorsThrow'
 import jwt, { JwtPayload } from 'jsonwebtoken'
 
 export default async function validateToken(req: Request, res: Response, next: NextFunction) {

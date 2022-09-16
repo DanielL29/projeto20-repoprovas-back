@@ -1,5 +1,5 @@
 import { NextFunction, Response } from 'express'
-import errorsHash from './errorsHash.js'
+import errorsHash from './errorsHash'
 
 export default function errorsHandler(err: any, _: any, res: Response, next: NextFunction): Response {
     console.log(err)

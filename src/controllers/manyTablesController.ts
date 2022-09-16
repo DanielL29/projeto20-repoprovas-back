@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import * as manyTablesService from '../services/manyTablesService.js'
+import * as manyTablesService from '../services/manyTablesService'
 
 export async function getManyTables(_: Request, res: Response) {
     const manyTables = await manyTablesService.manyTables()

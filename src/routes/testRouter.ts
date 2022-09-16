@@ -1,7 +1,7 @@
 import { Router } from 'express'
-import validateSchemas from '../middlewares/validateSchemas.js'
-import validateToken from '../middlewares/validateToken.js'
-import * as testController from '../controllers/testController.js'
+import validateSchemas from '../middlewares/validateSchemas'
+import validateToken from '../middlewares/validateToken'
+import * as testController from '../controllers/testController'
 
 const testRouter = Router()
 

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { TestInsertData } from "../types/testType.js";
-import * as testService from '../services/testService.js'
+import { TestInsertData } from "../types/testType";
+import * as testService from '../services/testService'
 
 export async function create(req: Request, res: Response) {
     const test: TestInsertData = req.body

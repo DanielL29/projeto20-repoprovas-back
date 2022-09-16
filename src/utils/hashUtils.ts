@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt'
-import * as errors from '../errors/errorsThrow.js'
+import * as errors from '../errors/errorsThrow'
 
 interface HashLiterals {
     hashSync: (password: string) => string

@@ -1,6 +1,6 @@
 import { Category, Discipline, Teacher, TeacherDiscipline } from "@prisma/client";
-import { prisma } from "../database/db.js";
-import { ManyTables } from "../types/manyTablesType.js";
+import { prisma } from "../database/db";
+import { ManyTables } from "../types/manyTablesType";
 
 export async function findManyTables(): Promise<ManyTables> {
     const categories: Category[] = await prisma.category.findMany()

@@ -1,5 +1,5 @@
 import Joi, { ObjectSchema } from 'joi'
-import { TestInsertData } from '../types/testType.js'
+import { TestInsertData } from '../types/testType'
 
 const testSchema: ObjectSchema<TestInsertData> = Joi.object({
     name: Joi.string().required(),

@@ -1,9 +1,9 @@
-import * as userRepository from '../repositories/userRepository.js'
+import * as userRepository from '../repositories/userRepository'
 import jwt from 'jsonwebtoken'
 import { User } from '@prisma/client'
-import { verifyData } from '../utils/verifyDataUtil.js'
-import { hash } from '../utils/hashUtils.js'
-import { UserInsertData } from '../types/userType.js'
+import { verifyData } from '../utils/verifyDataUtil'
+import { hash } from '../utils/hashUtils'
+import { UserInsertData } from '../types/userType'
 
 export async function signUp(user: UserInsertData) {
     const isUser: User | null = await userRepository.findByEmail(user.email)

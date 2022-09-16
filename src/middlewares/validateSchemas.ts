@@ -1,6 +1,6 @@
-import schemas from '../schemas/schemas.js'
+import schemas from '../schemas/schemas'
 import { Request, NextFunction } from 'express'
-import * as errors from '../errors/errorsThrow.js'
+import * as errors from '../errors/errorsThrow'
 
 export default function validateSchemas(schema: string) {
     if (!schemas.hasOwnProperty(schema)) {

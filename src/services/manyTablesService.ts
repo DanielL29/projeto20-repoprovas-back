@@ -1,5 +1,5 @@
-import * as manyTablesRepository from '../repositories/manyTablesRepository.js'
-import * as errors from '../errors/errorsThrow.js'
+import * as manyTablesRepository from '../repositories/manyTablesRepository'
+import * as errors from '../errors/errorsThrow'
 
 export async function manyTables() {
     const manyTables = await manyTablesRepository.findManyTables()

@@ -1,5 +1,5 @@
-import { TestInsertData } from "../types/testType.js";
-import * as testRepository from '../repositories/testRepository.js'
+import { TestInsertData } from "../types/testType";
+import * as testRepository from '../repositories/testRepository'
 
 export async function newTest(test: TestInsertData) {
     await testRepository.insert(test)
