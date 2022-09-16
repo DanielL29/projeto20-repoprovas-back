@@ -1,9 +1,11 @@
 import express from 'express'
 import 'express-async-errors'
 import cors from 'cors'
-import './config/config'
 import router from './routes/router'
 import errorsHandler from './errors/errorsHandler'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT

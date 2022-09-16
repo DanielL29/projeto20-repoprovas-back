@@ -8,17 +8,4 @@ export async function findManyTables(): Promise<ManyTables> {
     const teachers: Teacher[] = await prisma.teacher.findMany()
 
     return { categories, disciplines, teachers }
-}
-
-export async function findTeacherAndDiscipline(teacherId: number, disciplineId: number): Promise<TeacherDiscipline | null> {
-    const teacherAndDiscipline: TeacherDiscipline | null = await prisma.teacherDiscipline.findUnique({
-        where: {
-            teacherId_disciplineId: {
-                teacherId,
-                disciplineId
-            }
-        }
-    })
-
-    return teacherAndDiscipline
-}   
+} 

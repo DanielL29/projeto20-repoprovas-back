@@ -31,11 +31,19 @@ describe('POST /sign-in', () => {
         expect(result.status).toBe(200)
     })
 
-    // it('given a user not founded on db return 404', async () => {
+    it('given a user not founded on db return 404', async () => {
+        const user = userFactory.createUser()
 
-    // })
+        const result = await supertest(app).post('/sign-in').send(user)
+        expect(result.status).toBe(404)
+    })
 
+    it('given a wrong password return 401', async () => {
+        const { insertedUser } = await userFactory.insertUser()
 
+        const result = await supertest(app).post('/sign-in').send({ email: insertedUser.email, password: 'wrong password' })
+        expect(result.status).toBe(400)
+    })
 })
 
 afterAll(async () => {

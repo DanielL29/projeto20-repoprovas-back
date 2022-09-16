@@ -42,11 +42,11 @@ export async function findTestsByDiscipline() {
                     categories: discipline.categories.map(category => {
                         return {
                             ...category,
-                            tests: category.tests.map(test => {
+                            tests: category.tests.filter(test => {
                                 if (test.teacherDiscipline.discipline.id === discipline.id) {
                                     return test
                                 }
-                            }).filter(test => test !== undefined)
+                            })
                         }
                     })
                 }
@@ -85,11 +85,11 @@ export async function findTestsByTeacher() {
             categories: teacher.categories.map(category => {
                 return {
                     ...category,
-                    tests: category.tests.map(test => {
+                    tests: category.tests.filter(test => {
                         if (test.teacherDiscipline.teacher.id === teacher.id) {
                             return test
                         }
-                    }).filter(test => test !== undefined)
+                    })
                 }
             })
         }
