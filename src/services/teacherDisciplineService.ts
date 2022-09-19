@@ -10,3 +10,9 @@ export async function teacherDiscipline(teacherId: number, disciplineId: number)
 
     return teacherAndDiscipline
 }
+
+export async function allDisciplineFromTeachers(disciplineId: number) {
+    const disciplineTeachers = await teacherDisciplineRepository.findDisciplineTeachers(disciplineId)
+
+    return disciplineTeachers
+}

@@ -10,3 +10,11 @@ export async function getTeacherDiscipline(req: Request, res: Response) {
 
     res.status(200).send(teacherAndDiscipline)
 }
+
+export async function getDisciplineTeachers(req: Request, res: Response) {
+    const disciplineId: number = Number(req.params.disciplineId)
+
+    const disciplineTeachers = await teacherDisciplineService.allDisciplineFromTeachers(disciplineId)
+
+    res.status(200).send(disciplineTeachers)
+}

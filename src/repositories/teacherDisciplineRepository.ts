@@ -18,4 +18,23 @@ export async function findByTeacherAndDiscipline(teacherId: number, disciplineId
     })
 
     return teacherAndDiscipline
-}  
+}
+
+export async function findDisciplineTeachers(disciplineId: number) {
+    const disciplineTeachers = await prisma.teacherDiscipline.findMany({
+        where: {
+            disciplineId
+        },
+        select: {
+            disciplineId: true,
+            teacher: {
+                select: {
+                    id: true,
+                    name: true
+                }
+            }
+        }
+    })
+
+    return disciplineTeachers
+}

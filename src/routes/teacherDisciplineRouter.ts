@@ -5,5 +5,6 @@ import * as teacherDisciplineController from '../controllers/teacherDisciplineCo
 const teacherDisciplineRouter = Router()
 
 teacherDisciplineRouter.get('/teachersDisciplines/:teacherId/:disciplineId', validateToken, teacherDisciplineController.getTeacherDiscipline)
+teacherDisciplineRouter.get('/teachersDisciplines/:disciplineId', validateToken, teacherDisciplineController.getDisciplineTeachers)
 
 export default teacherDisciplineRouter

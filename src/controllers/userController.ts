@@ -17,3 +17,11 @@ export async function login(req: Request, res: Response) {
 
     res.status(200).send({ token })
 }
+
+export async function githubOAuthCode(req: Request, res: Response) {
+    const code: string = req.body.code
+
+    const token = await authService.githubOAuth(code)
+
+    res.status(200).send({ token })
+}
