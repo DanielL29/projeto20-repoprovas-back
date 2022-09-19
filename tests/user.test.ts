@@ -1,4 +1,4 @@
-import app from '../src/index';
+import app from '../src/app';
 import supertest from 'supertest';
 import * as userFactory from './factories/userFactory';
 import { prisma } from '../src/database/db';
@@ -20,6 +20,11 @@ describe('POST /sign-up', () => {
 
         const result = await supertest(app).post('/sign-up').send({ email: insertedUser.email, password: insertedUser.password })
         expect(result.status).toBe(409)
+    })
+
+    it('given a body without object/json return 422', async () => {
+        const result = await supertest(app).post('/sign-up')
+        expect(result.status).toBe(422)
     })
 })
 
@@ -43,6 +48,11 @@ describe('POST /sign-in', () => {
 
         const result = await supertest(app).post('/sign-in').send({ email: insertedUser.email, password: 'wrong password' })
         expect(result.status).toBe(400)
+    })
+
+    it('given a body without object/json return 422', async () => {
+        const result = await supertest(app).post('/sign-in')
+        expect(result.status).toBe(422)
     })
 })
 

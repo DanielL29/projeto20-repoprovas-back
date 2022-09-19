@@ -2,10 +2,10 @@
   "name": "projeto20-repoprovas",
   "version": "1.0.0",
   "description": "a project to create reporitories to your tests",
-  "main": "src/index.ts",
+  "main": "src/server.ts",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev nodemon src/index.ts",
-    "start": "nodemon dist/index.js",
+    "dev": "nodemon src/server.ts",
+    "start": "nodemon dist/server.js",
     "build": "tsc && npx prisma generate && npx prisma migrate deploy",
     "test": "cross-env dotenv -e .env.test prisma migrate dev && cross-env dotenv -e .env.test prisma db seed && cross-env dotenv -e .env.test jest -i --no-cache"
   },
