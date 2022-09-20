@@ -1,8 +1,11 @@
+import { Test } from "@prisma/client";
 import { prisma } from "../database/db";
 import { TestInsertData } from "../types/testType";
 
-export async function insert(test: TestInsertData) {
-    await prisma.test.create({ data: test })
+export async function insert(test: TestInsertData): Promise<Test> {
+    const insertedTest: Test = await prisma.test.create({ data: test })
+
+    return insertedTest
 }
 
 export async function findTestsByDiscipline() {

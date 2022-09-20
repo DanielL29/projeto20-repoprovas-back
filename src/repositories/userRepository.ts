@@ -11,3 +11,9 @@ export async function findByEmail(email: string): Promise<User | null> {
 export async function insert(user: UserInsertData) {
     await prisma.user.create({ data: user })
 }
+
+export async function findAll(): Promise<User[]> {
+    const user: User[] = await prisma.user.findMany()
+
+    return user
+}
